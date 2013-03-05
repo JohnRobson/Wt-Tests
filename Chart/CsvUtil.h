@@ -10,7 +10,7 @@
 #include <iostream>
 
 namespace Wt {
-  class WAbstractItemModel;
+class WAbstractItemModel;
 }
 
 /**
@@ -18,10 +18,11 @@ namespace Wt {
  */
 /*@{*/
 
+void readFile(std::istream& f, std::vector<std::string>& content);
+
 /*! \brief Utility function that reads a model from a CSV file.
  */
-extern void readFromCsv(std::istream& f, Wt::WAbstractItemModel *model,
-			int numRows = -1, bool firstLineIsHeaders = true);
+extern void createModel(std::istream& f, Wt::WAbstractItemModel* model, int numRows = -1, bool firstLineIsHeaders = true);
 
 /*@}*/
 

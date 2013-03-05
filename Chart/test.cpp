@@ -28,13 +28,13 @@ using namespace std;
 using namespace Wt;
 using namespace Wt::Chart;
 
-namespace {
+//namespace {
 WAbstractItemModel* readCsvFile(const string& fname, WContainerWidget* parent) {
   WStandardItemModel* model = new WStandardItemModel(0, 0, parent);
   ifstream f(fname.c_str());
 
   if(f) {
-    readFromCsv(f, model);
+    createModel(f, model);
 
     for(int row = 0; row < model->rowCount(); ++row) {
       for(int col = 0; col < model->columnCount(); ++col) {
@@ -50,7 +50,7 @@ WAbstractItemModel* readCsvFile(const string& fname, WContainerWidget* parent) {
     return 0;
   }
 }
-}
+//}
 
 void TimeSeriesExample(Wt::WContainerWidget*& parent, string rootSite) {
   WAbstractItemModel* model = readCsvFile(rootSite + "Chart/timeseries.csv", parent);
@@ -119,7 +119,7 @@ void TimeSeriesExample(Wt::WContainerWidget*& parent, string rootSite) {
   chart->setPlotAreaPadding(40, Left);
   chart->setPlotAreaPadding(20, Top | Bottom);
 
-  for(int i = 1; i < 3; ++i) {
+  for(int i = 1; i < 8; ++i) {
     WDataSeries s(i, LineSeries);
     s.setShadow(WShadow(3, 3, WColor(0, 0, 0, 127), 3));
     chart->addSeries(s);
