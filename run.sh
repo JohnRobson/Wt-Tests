@@ -3,7 +3,7 @@
 
 ################################################################################
 
-project="Localized"; # choose what project to compile and run
+project="Chart"; # choose what project to compile and run
 
 ################################################################################
 
