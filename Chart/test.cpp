@@ -140,8 +140,6 @@ public:
 
 WtApplication::WtApplication(const WEnvironment& env) : WApplication(env) {
   string rootSite = appRoot();
-  setTitle("Charts example");
-  setCssTheme("polished");
   root()->setPadding(10);
   root()->resize(WLength::Auto, WLength::Auto);
   useStyleSheet("./Chart/charts.css");
