@@ -164,19 +164,9 @@ void DensityApp::plot() {
   R_["kernel"] = kernelstr[kernel_]; // passes the string to R
   R_["y"] = Yvec_;
 
-  //string cmd0 = "png(filename=tfile,width=600,height=400); plot(density(y, bw=bw/100, kernel=kernel), xlim=range(y)+c(-2,2), main=\"Kernel: ";
-  //string cmd1 = "\"); points(y, rep(0, length(y)), pch=16, col=rgb(0,0,0,1/4)); dev.off()";
-  //string cmd = cmd0 + kernelstr[kernel_] + cmd1; // stick the selected kernel in the middle
-
-
-
   string cmd0 = "png(filename=tfile,width=600,height=400); plot(density(y, bw=bw/100, kernel=kernel), xlim=range(y)+c(-2,2), main=\"Kernel: ";
   string cmd1 = "\"); points(y, rep(0, length(y)), pch=16, col=rgb(0,0,0,1/4)); dev.off()";
-
   string cmd = cmd0 + kernelstr[kernel_] + cmd1; // stick the selected kernel in the middle
-
-
-
 
   R_.parseEvalQ(cmd); // evaluate command -- generates new density plot
 
