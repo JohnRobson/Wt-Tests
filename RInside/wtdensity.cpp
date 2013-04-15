@@ -85,13 +85,14 @@ DensityApp::DensityApp(const WEnvironment& env, RInside& R) : WApplication(env),
   spin_->valueChanged().connect(this, &DensityApp::reportSpinner);
 
   midbox->addWidget(new WBreak()); // insert a line break
-  midbox->addWidget(new WText("R Command for data generation")); // show some text
+  midbox->addWidget(new WText("R Command for data generation (edit disable)")); // show some text
   midbox->addWidget(new WBreak()); // insert a line break
   codeEdit_ = new WLineEdit(midbox); // allow text input
   codeEdit_->setTextSize(30);
   codeEdit_->setText(cmd_);
   codeEdit_->setFocus(); // give focus
   codeEdit_->enterPressed().connect(this, &DensityApp::reportEdit);
+  codeEdit_->disable(); // temporary disable
 
   group_ = new WButtonGroup(container); // use button group to arrange radio buttons
 
