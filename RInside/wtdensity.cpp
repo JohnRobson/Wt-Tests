@@ -92,7 +92,7 @@ DensityApp::DensityApp(const WEnvironment& env, RInside& R) : WApplication(env),
   codeEdit_->setText(cmd_);
   codeEdit_->setFocus(); // give focus
   codeEdit_->enterPressed().connect(this, &DensityApp::reportEdit);
-  codeEdit_->disable(); // temporary disable
+  //codeEdit_->disable(); // temporary disable
 
   group_ = new WButtonGroup(container); // use button group to arrange radio buttons
 
