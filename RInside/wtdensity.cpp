@@ -203,7 +203,7 @@ int main(int argc, char** argv) {
 /*
 // -*- mode: C++; c-indent-level: 4; c-basic-offset: 4; tab-width: 8; -*-
 
-rm wtdensity; g++-4.7 -Wall -I/usr/share/R/include -I/usr/local/lib/R/site-library/Rcpp/include -I/usr/local/lib/R/site-library/RInside/include -pipe -O0 -g3 -ggdb3 -DDEBUG -D_DEBUG=9 -o wtdensity wtdensity.cpp -L/usr/lib/R/lib -lR -lblas -llapack -L/usr/local/lib/R/site-library/Rcpp/lib -lRcpp -Wl,-rpath,/usr/local/lib/R/site-library/Rcpp/lib -L/usr/local/lib/R/site-library/RInside/lib -lRInside -Wl,-rpath,/usr/local/lib/R/site-library/RInside/lib -lwt -lwthttp -lboost_signals
+rm wtdensity; g++-4.7 -Wall -I/usr/share/R/include -I/usr/local/lib/R/site-library/Rcpp/include -I/usr/local/lib/R/site-library/RInside/include -pipe -O0 -g3 -ggdb3 -DDEBUG -D_DEBUG=9 -o wtdensity wtdensity.cpp -L/usr/lib/R/lib -lR -lblas -llapack -L/usr/local/lib/R/site-library/Rcpp/lib -lRcpp -Wl,-rpath,/usr/local/lib/R/site-library/Rcpp/lib -L/usr/local/lib/R/site-library/RInside/lib -lRInside -Wl,-rpath,/usr/local/lib/R/site-library/RInside/lib -lwt -lwthtt -lboost_signals
 
 ./wtdensity --approot . --docroot . --http-addr 0.0.0.0 --http-port 10100
 

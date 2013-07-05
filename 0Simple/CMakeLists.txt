@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-project(Test)
+project(0Simple)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 set(CMAKE_CXX_COMPILER "g++")
@@ -14,7 +14,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-std=c++98 -pedantic -Wall -Wextra -O0 -g3 -ggdb3 -DD
 
 find_package(Boost COMPONENTS REQUIRED) # COMPONENTS date_time regex program_options signals system filesystem thread REQUIRED
 
-include_directories(/usr/local/include ${CMAKE_SOURCE_DIR}/src ${Wt_INCLUDE_DIR} ${Boost_INCLUDE_DIRS})
+include_directories(/usr/include /usr/local/include ${CMAKE_SOURCE_DIR}/src ${Wt_INCLUDE_DIR} ${Boost_INCLUDE_DIRS})
 link_directories(/usr/lib /usr/local/lib ${Boost_LIBRARY_DIRS})
 
 add_executable(test.wt test.cpp)
