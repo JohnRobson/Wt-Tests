@@ -68,6 +68,12 @@ elseif ( CMAKE_BUILD_TYPE STREQUAL "RELEASE" )
     add_definitions("-O3")
 endif()
 
+########## Personal ##########
+find_package(Boost COMPONENTS REQUIRED) # COMPONENTS date_time regex program_options signals system filesystem thread REQUIRED
+include_directories(/usr/include /usr/local/include ${CMAKE_SOURCE_DIR}/src ${Wt_INCLUDE_DIR} ${Boost_INCLUDE_DIRS})
+link_directories(/usr/lib /usr/local/lib ${Boost_LIBRARY_DIRS})
+########## Personal ##########
+
 foreach (next_SOURCE ${sources})
    get_filename_component(source_name ${next_SOURCE} NAME_WE)
    add_executable( ${source_name} ${next_SOURCE} )
@@ -80,5 +86,5 @@ foreach (next_SOURCE ${sources})
    target_link_libraries(${source_name} "wt")
    target_link_libraries(${source_name} "wthttp")
    target_link_libraries(${source_name} "boost_signals")
+   target_link_libraries(${source_name} "rt") # Personal
 endforeach (next_SOURCE ${sources})
-
