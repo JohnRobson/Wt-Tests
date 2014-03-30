@@ -3,7 +3,7 @@
 
 ################################################################################
 
-project="RInside"; # choose what project to compile and run eg:"0Simple"
+project="Emails"; # choose what project to compile and run eg:"0Simple"
 output="/tmp/build/wt/tests/"${project} # output compiled files
 
 ################################################################################
@@ -18,6 +18,9 @@ cmake ${path}
 
 time make -j8
 
-${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100
+${output}/test.wt --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100
 
 #gdb -ex run --args ${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100
+
+# Temporary RInside
+#${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100

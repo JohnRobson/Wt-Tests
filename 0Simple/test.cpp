@@ -30,7 +30,7 @@ using namespace Wt;
 class WtApplication : public WApplication { public: WtApplication(const WEnvironment& env); };
 
 WtApplication::WtApplication(const WEnvironment& env) : WApplication(env) {
-	new WText("Hello World", root()); new WBreak(root());
+	new WText("Hello World - Simple", root()); new WBreak(root());
 }
 
 WApplication *createApplication(const WEnvironment& env) { return new WtApplication(env); }
