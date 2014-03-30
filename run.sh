@@ -20,4 +20,4 @@ time make -j8
 
 ${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100
 
-#gdb --args ${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100
+#gdb -ex run --args ${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100

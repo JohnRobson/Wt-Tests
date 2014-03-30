@@ -10,7 +10,7 @@
     <p class="p">
       This example demonstrates some of the capabilities of the
       the <a href="http://www.webtoolkit.eu/wt/">Wt library</a>, in combination with the
-      <a href="http://dirk.eddelbuettel.com/code/rinside.html">RInside</a> classes for
+      <a href="http://dirk.eddelbuettel.com/code/rinside.html">RInside</a> classes for 
       embedding the <a href="http://www.r-project.org">R</a> statistical language and environment.
     </p>
 
@@ -19,7 +19,7 @@
       drawing from a random distribution, and estimation a
       non-parametric density for which the user selects the kernel and bandwidth.
       <a href="http://dirk.eddelbuettel.com/code/rinside.html">RInside</a> already contains
-      an example of this using <a href="http://www.qt-project.org">Qt</a> to provide
+      an example of this using <a href="http://www.qt-project.org">Qt</a> to provide 
       a standard <em>application</em>.
     </p>
 
