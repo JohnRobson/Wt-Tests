@@ -7,11 +7,12 @@ project="RInside"; # choose what project to compile and run eg:"0Simple"
 
 ################################################################################
 
+tmp="/tmp/build/wt/tests"
 root="`pwd`"
-path=${root}"/"${project};
+path=${root}"/"${project}
 
 # creating directory for compile this test
-rm -rf /tmp/build/wt/tests; mkdir -p /tmp/build/wt/tests; cd /tmp/build/wt/tests;
+rm -rf ${tmp}; mkdir -p ${tmp}; cd ${tmp};
 
 cmake ${path}
 
@@ -22,11 +23,9 @@ time make -j2
 #gdb --args /tmp/build/wt/tests/test.wt --approot . --docroot . --http-addr 0.0.0.0 --http-port 10100
 
 
-
-
 # Temporary - project: RInside
 
-/tmp/build/wt/tests/wtdensity --approot /home/john/projects/wt/tests/RInside --docroot /home/john/projects/wt/tests/RInside --http-addr 0.0.0.0 --http-port 10100
+${tmp}/wtdensity --approot /home/user/projects/wt/tests/RInside --docroot /home/user/projects/wt/tests/RInside --http-addr 0.0.0.0 --http-port 10100
 
 #/tmp/build/wt/tests/wtdensity --approot /tmp/Wt-Tests/RInside --docroot /tmp/Wt-Tests/RInside --http-addr 0.0.0.0 --http-port 10100
 
