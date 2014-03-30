@@ -59,7 +59,7 @@ void WtApplication::test1() {
 
 void WtApplication::test2() {
 	string r, s;
-	ifstream file("/home/john/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml", ios::in);
+	ifstream file("/home/user/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml", ios::in);
 	while (getline(file, r)) { s.append(r); }
 
 	char* a = new char[s.size()+1];
@@ -73,7 +73,7 @@ void WtApplication::test2() {
 
 void WtApplication::test3() {
 	// http://www.cplusplus.com/reference/clibrary/cstdio/fread/
-	FILE *fp = fopen("/home/john/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml","r");
+	FILE *fp = fopen("/home/user/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml","r");
 	//if (fp==NULL) {fputs ("File error",stderr); exit (1);}
 	//if (fp.fail()) return 1;
 
@@ -103,7 +103,7 @@ void WtApplication::test3() {
 }
 
 void WtApplication::test4() {
-	ifstream fl("/home/john/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml", ios::in | ios::binary);
+	ifstream fl("/home/user/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml", ios::in | ios::binary);
 	//if (fl.fail()) return 1;
 	fl.seekg(0, ios::end);
 	size_t len = fl.tellg();
@@ -139,7 +139,7 @@ vector<xml_node<> *> childElements(xml_node<> *element, const char *tagName) {
 }
 
 void WtApplication::test5() {
-	ifstream fl("/home/john/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml", ios::in | ios::binary);
+	ifstream fl("/home/user/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml", ios::in | ios::binary);
 	fl.seekg(0, ios::end);
 	size_t len = fl.tellg();
 	fl.seekg(0, ios::beg);
@@ -163,7 +163,7 @@ void WtApplication::test5() {
 }
 
 void WtApplication::test6() {
-	ifstream fl("/home/john/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml");
+	ifstream fl("/home/user/projects/wt/tests/RapidXML/Info_BMFBOVESPA.xml");
 	//if (fin.fail()) return 1;
 
 	fl.seekg(0, ios::end);

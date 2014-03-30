@@ -4,28 +4,20 @@
 ################################################################################
 
 project="RInside"; # choose what project to compile and run eg:"0Simple"
+output="/tmp/build/wt/tests/"${project} # output compiled files
 
 ################################################################################
 
-tmp="/tmp/build/wt/tests"
 root="`pwd`"
 path=${root}"/"${project}
 
 # creating directory for compile this test
-rm -rf ${tmp}; mkdir -p ${tmp}; cd ${tmp};
+rm -rf ${output}; mkdir -p ${output}; cd ${output};
 
 cmake ${path}
 
-time make -j2
+time make -j8
 
-#/tmp/build/wt/tests/test.wt --approot ${root} --docroot ${root} --http-addr 0.0.0.0 --http-port 10100 # uncomment this line
+${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100
 
-#gdb --args /tmp/build/wt/tests/test.wt --approot . --docroot . --http-addr 0.0.0.0 --http-port 10100
-
-
-# Temporary - project: RInside
-
-${tmp}/wtdensity --approot /home/user/projects/wt/tests/RInside --docroot /home/user/projects/wt/tests/RInside --http-addr 0.0.0.0 --http-port 10100
-
-#/tmp/build/wt/tests/wtdensity --approot /tmp/Wt-Tests/RInside --docroot /tmp/Wt-Tests/RInside --http-addr 0.0.0.0 --http-port 10100
-
+#gdb --args ${output}/wtdensity --approot ${root}/${project} --docroot ${root}/${project} --http-addr 0.0.0.0 --http-port 10100

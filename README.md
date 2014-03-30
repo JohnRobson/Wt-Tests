@@ -14,7 +14,7 @@ $ git clone https://github.com/JohnRobson/Wt-Tests.git
 
 $ cd Wt-Tests
 
-# $ vi run.sh
+# $ vim run.sh
 # or $ gedit run.sh
 # project="FolderName"; # choose Folder Name project to compile and run
 
