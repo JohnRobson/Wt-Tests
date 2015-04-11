@@ -1,0 +1,7 @@
+$ sudo apt-get install r-base r-base-dev r-recommended r-cran-codetools r-cran-rcmdr
+$ sudo apt-get purge r-cran-rcpp
+
+$ sudo R
+> remove.packages("RInside", lib=file.path("/usr/local/lib/R/site-library"))
+> remove.packages("Rcpp", lib=file.path("/usr/lib/R/site-library"))
+> install.packages(c("Rcpp", "RInside"), type="source", dependencies=TRUE)

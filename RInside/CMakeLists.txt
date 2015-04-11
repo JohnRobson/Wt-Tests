@@ -82,9 +82,14 @@ elseif ( CMAKE_BUILD_TYPE STREQUAL "RELEASE" )
 endif()
 
 ########## Personal ##########
+SET (CMAKE_VERBOSE_MAKEFILE ON)
+
 find_package(Boost COMPONENTS REQUIRED) # COMPONENTS date_time regex program_options signals system filesystem thread REQUIRED
 include_directories(/usr/include /usr/local/include ${CMAKE_SOURCE_DIR}/src ${Wt_INCLUDE_DIR} ${Boost_INCLUDE_DIRS})
-link_directories(/usr/lib /usr/local/lib ${Boost_LIBRARY_DIRS})
+# /usr/lib/R/library/RInside/include /usr/lib/R/library/Rcpp/include
+link_directories(/usr/lib /usr/local/lib /usr/lib/R/lib ${Boost_LIBRARY_DIRS})
+# /usr/lib/R/lib /usr/lib/R/library/RInside/lib
+
 ########## Personal ##########
 
 foreach (next_SOURCE ${sources})
@@ -98,6 +103,9 @@ foreach (next_SOURCE ${sources})
    target_link_libraries(${source_name} ${LAPACK_LIBS})
    target_link_libraries(${source_name} "wt")
    target_link_libraries(${source_name} "wthttp")
-   target_link_libraries(${source_name} "boost_signals")
+   
+   #target_link_libraries(${source_name} "boost_signals")
+   target_link_libraries(${source_name} "boost_system")
+   
 endforeach (next_SOURCE ${sources})
 

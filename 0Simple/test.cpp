@@ -27,15 +27,23 @@
 using namespace std;
 using namespace Wt;
 
-class WtApplication : public WApplication { public: WtApplication(const WEnvironment& env); };
+class WtApplication : public WApplication {
+public:
+	WtApplication (const WEnvironment& env);
+};
 
-WtApplication::WtApplication(const WEnvironment& env) : WApplication(env) {
-	new WText("Hello World - Simple", root()); new WBreak(root());
+WtApplication::WtApplication (const WEnvironment& env) : WApplication (env) {
+	new WText ("Hello World - Simple", root());
+	new WBreak (root());
 }
 
-WApplication *createApplication(const WEnvironment& env) { return new WtApplication(env); }
+WApplication* createApplication (const WEnvironment& env) {
+	return new WtApplication (env);
+}
 
-int main(int argc, char **argv) { return WRun(argc, argv, &createApplication); }
+int main (int argc, char** argv) {
+	return WRun (argc, argv, &createApplication);
+}
 
 
 /*

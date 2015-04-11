@@ -8,10 +8,10 @@ set(CMAKE_CXX_COMPILER "g++")
 
 # $ cat /proc/cpuinfo
 set(CMAKE_BUILD_TYPE "Debug")
-set(CMAKE_CXX_FLAGS_DEBUG "-std=c++11 -pedantic -Wall -Wextra -march=corei7-avx -pthread -O0 -g3 -ggdb3 -DDEBUG -D_DEBUG=9") # -std=gnu++11 | -pthread
+set(CMAKE_CXX_FLAGS_DEBUG "-std=gnu++11 -pedantic -Wall -Wextra -march=ivybridge -pthread -O0 -g3 -ggdb3 -DDEBUG -D_DEBUG=9") # -std=c++11 | -pthread
 
 #set(CMAKE_BUILD_TYPE "Release")
-#set(CMAKE_CXX_FLAGS_RELEASE "-std=c++11 -pedantic -Wall -Wextra -march=corei7-avx -pthread -O2 -g0 -DNDEBUG -UNDEBUG -pthread")
+#set(CMAKE_CXX_FLAGS_RELEASE "-std=gnu++11 -pedantic -Wall -Wextra -march=ivybridge -pthread -O2 -g0 -DNDEBUG -UNDEBUG -pthread")
 
 find_package(Boost COMPONENTS REQUIRED) # COMPONENTS date_time regex program_options signals system filesystem thread REQUIRED
 
